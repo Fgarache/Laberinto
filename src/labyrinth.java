@@ -10,9 +10,19 @@ public class labyrinth {
 
 
     public void paint(Graphics g) {
+        int[][] laberinto=optienelaberinto();
+        for (int fila = 0; fila < numeroFilas ; fila++) {
+            for (int columna = 0; columna < numeroColumnas; columna++) {
+                if (laberinto [fila][columna] == 1) {
+                    g.setColor(Color.white);
+                    g.fillRect(columna*40, fila*40, anchoBloque, altoBloque);
+                    g.setColor(Color.blue);
+                    g.fillRect(columna*40+1, fila*40+1, anchoBloque+1, altoBloque+1);
 
+                }
+            }
+        }
     }
-
     public int[][] optienelaberinto() {
         int laberinto[][] = {
                         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},

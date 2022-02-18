@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class Person {
     private int x=40;
@@ -12,7 +13,25 @@ public class Person {
         g.fillOval(x,y,ancho,alto);
         g.setColor(Color.black);
         g.drawOval(x,y,ancho,alto);
-
     }
 
+    public void Tecla (KeyEvent evento){
+        if (evento.getKeyCode() == 37) {
+            System.out.println("izquierda");
+            x = x-movimiento;
+
+        }
+        if (evento.getKeyCode() == 39) {
+            System.out.println("derecha");
+            x = x+movimiento;
+        }
+        if (evento.getKeyCode() == 40) {
+            System.out.println("abajo");
+            y= y+movimiento;
+        }
+        if (evento.getKeyCode() == 38) {
+            System.out.println("arriba");
+            y= y-movimiento;
+        }
+    }
 }
